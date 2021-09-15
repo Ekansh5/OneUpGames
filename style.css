@@ -447,8 +447,4 @@ img, svg {
 .three{
     height: 60px;
 }
-img {
-    max-width: 100%;
-    height: auto;
-  }
 
