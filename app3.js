@@ -4,7 +4,7 @@ const fileContent = fs.readFileSync('index2.html')
 
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 80;
 const home = fs.readFileSync('index.html')
 const about = fs.readFileSync('./about.html')
 const services = fs.readFileSync('./services.html')
