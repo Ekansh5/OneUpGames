@@ -16,6 +16,6 @@ sendBtn.addEventListener("click", () => {
   panel.innerHTML = `
 		<i class="fas fa-heart"></i>
 		<strong>Thank you, for the review!</strong>
-		<p>We'll use your feedback in improve our games.</p>
+		<p>We'll use your feedback to improve our games.</p>
 	`;
 });
