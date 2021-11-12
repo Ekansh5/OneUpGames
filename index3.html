@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Review & Rating System in PHP & Mysql using Ajax</title>
+    <title>Review us</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -12,9 +12,8 @@
 </head>
 <body>
     <div class="container">
-    	<h1 class="mt-5 mb-5">Review & Rating System in PHP & Mysql using Ajax</h1>
     	<div class="card">
-    		<div class="card-header">Sample Product</div>
+    		<div class="card-header">Reviews</div>
     		<div class="card-body">
     			<div class="row">
     				<div class="col-sm-4 text-center">
@@ -114,3 +113,87 @@
     	</div>
   	</div>
 </div>
+var rating_data = 0;
+
+    $('#add_review').click(function(){
+
+        $('#review_modal').modal('show');
+
+    });
+
+    $(document).on('mouseenter', '.submit_star', function(){
+
+        var rating = $(this).data('rating');
+
+        reset_background();
+
+        for(var count = 1; count <= rating; count++)
+        {
+
+            $('#submit_star_'+count).addClass('text-warning');
+
+        }
+
+    });
+
+    function reset_background()
+    {
+        for(var count = 1; count <= 5; count++)
+        {
+
+            $('#submit_star_'+count).addClass('star-light');
+
+            $('#submit_star_'+count).removeClass('text-warning');
+
+        }
+    }
+
+    $(document).on('mouseleave', '.submit_star', function(){
+
+        reset_background();
+
+        for(var count = 1; count <= rating_data; count++)
+        {
+
+            $('#submit_star_'+count).removeClass('star-light');
+
+            $('#submit_star_'+count).addClass('text-warning');
+        }
+
+    });
+
+    $(document).on('click', '.submit_star', function(){
+
+        rating_data = $(this).data('rating');
+
+    });
+
+    $('#save_review').click(function(){
+
+        var user_name = $('#user_name').val();
+
+        var user_review = $('#user_review').val();
+
+        if(user_name == '' || user_review == '')
+        {
+            alert("Please Fill Both Field");
+            return false;
+        }
+        else
+        {
+            $.ajax({
+                url:"submit_rating.php",
+                method:"POST",
+                data:{rating_data:rating_data, user_name:user_name, user_review:user_review},
+                success:function(data)
+                {
+                    $('#review_modal').modal('hide');
+
+                    load_rating_data();
+
+                    alert(data);
+                }
+            })
+        }
+
+    });
