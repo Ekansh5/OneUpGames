@@ -449,6 +449,7 @@ img, svg {
 }
 
 .glow {
+  font-size: 10px;
   color: #fff;
   text-align: center;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
