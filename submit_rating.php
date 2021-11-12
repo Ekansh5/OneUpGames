@@ -1,3 +1,4 @@
+<script>
 $connect = new PDO("mysql:host=localhost;dbname=testing", "root", "");
 if(isset($_POST["rating_data"]))
 {
@@ -120,3 +121,4 @@ if(isset($_POST["action"]))
 	echo json_encode($output);
 
 }
+</script>
