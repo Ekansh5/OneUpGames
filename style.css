@@ -468,3 +468,5 @@ img, svg {
 .card:hover {
    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
 }
+.card-text {
+    color: rgb(155, 35, 53);
