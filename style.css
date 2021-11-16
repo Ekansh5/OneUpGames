@@ -233,59 +233,7 @@ form input{
     flex-basis: 48%;
     padding: 18px 0;
 }
-/*-----footer-----*/
-#footer{
-    padding: 50px 0 30px;
-    background-color: rgb(0, 0, 37);
-}
-hr{
-    width: 100%;
-    border: 0;
-    border-top: 1px solid #f67c92;
-}
-.footer-row{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.footer-left-col{
-    color: #fff;
-    flex-basis: 50%;
-    margin-top: 60px;   
-}
 
-.footer-links{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.link-title h4{
-    color: #fab3c4;
-    margin-bottom: 20px;
-}
-.link-title small{
-    font-size: 13px;
-    color: #777;
-}
-.footer-info{
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.footer-logo img{
-    width: 100px;
-}
-.footer-logo button{
-    padding: 12px 38px;
-    margin-top: 20px;
-    font-size: 10px;
-}
-.footer-text,.footer-logo{
-    flex-basis: 40%;
-}
-/*---social-icons---*/
 .social-icons{
     width: 50px;
     position: fixed;
@@ -303,29 +251,7 @@ hr{
 .website-link{
     color: #fab3c4;
 }
-.footer-right-col button{
-    color: #fff;
-    background: #f67c92;
-    font-size: 15px;
-}
-.copy{
-    color: #fab3c4;
-}
-.text{
-    color: #fab3c4;
-    text-align: center;
-}
-.footer-right-col h3{
-    color: #fff;
-    text-align: center;
-}
-.footer-right-col{
-    text-align: center;
-}
-.copy-text{
-    color: #fab3c4;
-    margin: auto 2px;
-}
+
 .arrow img{
     width: 40px;
     margin: 0 auto 20px;
@@ -353,9 +279,7 @@ hr{
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
-#footer .common-btn{
-    color: #fff;
-}
+
 .two{
     -webkit-animation: simple-move 2s 0s linear alternate infinite;
     animation: simple-move 2s 0s linear alternate infinite;
@@ -365,10 +289,7 @@ hr{
         -webkit-transform: translateX(40px);
     }
 }
-#footer a{
-    color: #fff;
-    text-decoration: none;
-}
+
 a{
     text-decoration: none;
     color: black;
@@ -475,3 +396,44 @@ img, svg {
 .card-title { 
     color: rgb(91, 94, 166);
     }
+@media only screen and (max-width: 770px) {
+    #header{
+        background-image: none;
+    }
+    .container {
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+    .logo{
+        margin-top: 27px;
+        width: 70px;
+    }
+    .header-text {
+        margin-top: 100px;
+    }
+    h1 {
+        font-size: 25x;
+    }
+    #menuBtn {
+        width: 40px;
+        right: 50px;
+    }
+    .common-btn {
+        padding: 10px 16px;
+    }
+    .social-icons img {
+        width: 14px;
+        margin: 15px auto;
+    }
+    .about-left-col, .about-right-col {
+        flex-basis: 100%;
+    }
+    .about-text {
+        margin: 50px 50px 0;
+        display: inline-block;
+    }
+    #projects {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+}
